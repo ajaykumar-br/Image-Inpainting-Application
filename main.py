@@ -45,7 +45,7 @@ if uploaded_file is not None:
         fill_color="white",
         stroke_width=stroke_width,
         stroke_color="black",
-        background_image=Image.open(uploaded_file).resize((h_, w_)),
+        background_image=Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB)).resize((w_, h_)),
         update_streamlit=True,
         height=h_,
         width=w_,
